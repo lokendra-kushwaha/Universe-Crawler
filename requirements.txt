@@ -5,3 +5,4 @@ numpy
 pandas
 sentence-transformers
 chromadb
+thefuzz
