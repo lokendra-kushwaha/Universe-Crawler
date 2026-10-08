@@ -6,3 +6,4 @@ pandas
 sentence-transformers
 chromadb
 thefuzz
+plotly
