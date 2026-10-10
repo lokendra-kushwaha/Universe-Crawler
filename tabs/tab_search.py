@@ -26,7 +26,7 @@ def render_search_tab():
     render_search_mode_toggle_ui()
     search_mode = st.radio(
         "Select Search Engine Mode:",
-        ["🎯 Exact Keyword (Speed & Precision)", "🤖 AI Semantic (Meaning & Context)"],
+        ["🧠 AI Semantic (Meaning & Context)", "🎯 Exact Keyword (Speed & Precision)"],
         horizontal=True,
         help="Exact Keyword uses Inverted Index. AI Semantic uses Vector Embeddings to understand the meaning of your query."
     )
@@ -118,7 +118,7 @@ def render_search_tab():
         # ------------------------------------------
         # SEARCH LOGIC ROUTING (HYBRID ENGINE)
         # ------------------------------------------
-        is_ai_mode = "🤖" in search_mode
+        is_ai_mode = "🧠" in search_mode
         
         if is_ai_mode:
             ranks_dict = {

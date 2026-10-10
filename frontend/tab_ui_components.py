@@ -1,11 +1,10 @@
 import streamlit as st
 import streamlit.components.v1 as components
 
+
 def render_search_header_ui():
     """Renders the main search title"""
     st.markdown('<h4 class="responsive-search-title">🔍 Search Your Indexed Universe</h4>', unsafe_allow_html=True)
-
-import streamlit as st
 
 def render_search_mode_toggle_ui():
     st.markdown("""
@@ -53,7 +52,7 @@ def render_search_mode_toggle_ui():
     div[role="radiogroup"] label:has(input:checked) {
         background-color: #ffffff !important;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12) !important;
-        color: #1a73e8 !important; /* Premium Google Blue text */
+        color: #1a73e8 !important; 
     }
     
     /* 6. Active state text styling */
@@ -61,65 +60,53 @@ def render_search_mode_toggle_ui():
         font-weight: 700 !important;
     }
 
-
     /* ======================================================== */
-    /* MOBILE FIX FOR RADIO PILLS (50/50 WIDTH)                 */
+    /* MOBILE FIX                                               */
     /* ======================================================== */
-    @media screen and (max-width: 768px) {
-        /* 1. Container ko mobile screen par poori jagah lene do */
+    @media screen and (max-width: 636px) {
         div[role="radiogroup"] {
             display: flex !important;
+            flex-direction: row !important; /* Force Side-by-Side */
             width: 100% !important;
         }
 
-        /* 2. Dono buttons ko exactly 50% width do */
         div[role="radiogroup"] label {
             flex: 1 !important;
-            width: 50% !important;
             padding: 8px 4px !important;
             display: flex !important;
             justify-content: center !important;
             align-items: center !important;
         }
 
-        /* 3. Text ko center karo aur mobile ke hisaab se fit karo */
         div[role="radiogroup"] label div {
             font-size: 0.75rem !important;
             text-align: center !important;
             line-height: 1.2 !important;
-            white-space: normal !important; /* Text lamba ho toh wrap ho jaye */
+            white-space: normal !important; 
         }
     }
 
-
     /* ======================================================== */
-    /* AUTO DARK MODE OVERRIDES (CYBER-GLASSMORPHISM PILLS)     */
+    /* AUTO DARK MODE OVERRIDES                                 */
     /* ======================================================== */
     @media (prefers-color-scheme: dark) {
-        
-        /* 1. Dark Glass Container */
         div[role="radiogroup"] {
             background-color: rgba(15, 23, 42, 0.6) !important;
             border: 1px solid rgba(255, 255, 255, 0.1) !important;
             box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2) !important;
         }
-
-        /* 2. Unselected options in Dark Mode */
         div[role="radiogroup"] label {
-            color: #94a3b8 !important; /* Soft Slate Grey */
+            color: #94a3b8 !important; 
         }
         div[role="radiogroup"] label:hover {
-            color: #cbd5e1 !important; /* Lighter grey on hover */
+            color: #cbd5e1 !important; 
         }
-
-        /* 3. ACTIVE (Selected) option in Dark Mode */
         div[role="radiogroup"] label:has(input:checked) {
             background-color: rgba(30, 41, 59, 0.95) !important;
             border: 1px solid rgba(0, 242, 254, 0.3) !important;
-            box-shadow: 0 4px 15px rgba(0, 242, 254, 0.15) !important; /* Neon Glow Shadow */
-            color: #00f2fe !important; /* Neon Cyan Text */
+            box-shadow: 0 4px 15px rgba(0, 242, 254, 0.15) !important; 
+            color: #00f2fe !important; 
         }
-        
         div[role="radiogroup"] label:has(input:checked) div {
             text-shadow: 0px 0px 8px rgba(0, 242, 254, 0.4) !important;
         }
@@ -236,7 +223,7 @@ def render_fuzzy_suggestion_ui(search_word, suggestion):
         }}
 
         /* ======================================================== */
-        /* AUTO DARK MODE OVERRIDES (CYBER-GLASS ALERT)             */
+        /* AUTO DARK MODE OVERRIDES                                 */
         /* ======================================================== */
         @media (prefers-color-scheme: dark) {{
             .spell-check-alert {{
@@ -301,7 +288,7 @@ def render_search_stats_banner_ui(num_results, total_search_time, engine_badge):
         }}
 
         /* ======================================================== */
-        /* AUTO DARK MODE OVERRIDES (CYBER-GLASSMORPHISM)           */
+        /* AUTO DARK MODE OVERRIDES                                 */
         /* ======================================================== */
         @media (prefers-color-scheme: dark) {{
             .search-stats-container {{
@@ -376,7 +363,7 @@ def render_premium_export_divider():
         }
 
         /* ======================================================== */
-        /* AUTO DARK MODE OVERRIDES (CYBER-GLASSMORPHISM)           */
+        /* AUTO DARK MODE OVERRIDES                                 */
         /* ======================================================== */
         @media (prefers-color-scheme: dark) {
             
@@ -460,7 +447,7 @@ def render_individual_result_ui(url, display_url, actual_rank, display_title, fi
         }}
 
         /* ======================================================== */
-        /* AUTO DARK MODE OVERRIDES (CYBER-GLASSMORPHISM)           */
+        /* AUTO DARK MODE OVERRIDES                                 */
         /* ======================================================== */
         @media (prefers-color-scheme: dark) {{
             .result-container {{
@@ -479,6 +466,7 @@ def render_individual_result_ui(url, display_url, actual_rank, display_title, fi
             
             .result-snippet {{
             color: #cbd5e1 !important; /* Light silver for reading clarity */
+            line-height: 1.2 !important;
             }}
         
             /* HIGHLIGHTED SEARCH KEYWORDS IN SNIPPET */
@@ -651,7 +639,7 @@ def render_insight_metrics_ui(total_pages, total_words, max_pr_score, avg_links)
     }}
 
     /* ======================================================== */
-    /* AUTO DARK MODE OVERRIDES (CYBER-GLASSMORPHISM METRICS)   */
+    /* AUTO DARK MODE OVERRIDES                                 */
     /* ======================================================== */
     @media (prefers-color-scheme: dark) {{
         
@@ -771,7 +759,7 @@ def render_admin_system_analytics_header():
         }
 
         /* ======================================================== */
-        /* AUTO DARK MODE OVERRIDES (CYBER-GLASS ADMIN STYLE)       */
+        /* AUTO DARK MODE OVERRIDES                                 */
         /* ======================================================== */
         @media (prefers-color-scheme: dark) {
             .admin-header-container {

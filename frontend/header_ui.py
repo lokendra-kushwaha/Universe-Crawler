@@ -295,7 +295,7 @@ def render_header_and_global_css():
         }
 
     /* ======================================================== */
-    /* DYNAMIC PREMIUM DARK MODE (BRUTAL OVERRIDES)             */
+    /* DYNAMIC PREMIUM DARK MODE                                */
     /* ======================================================== */
     @media (prefers-color-scheme: dark) {
         
@@ -407,6 +407,23 @@ def render_custom_responsive_css():
             color: #555555; /* Darkened for Light Mode */
             font-size: clamp(0.9rem, 2.5vw, 1.2rem); 
             margin-bottom: 40px;
+        }
+
+        /* ======================================================== */
+        /* MOBILE FIX FOR ALERTS (Database, Admin, etc.)            */
+        /* ======================================================== */
+        @media screen and (max-width: 768px) {
+            /* 1. Dabbe ko chota aur compact karo */
+            div[data-testid="stAlert"] {
+                padding: 8px 12px !important;
+                border-left-width: 3px !important;
+                margin-top: -35px !important;
+            }
+            
+            div[data-testid="stAlert"] * {
+                font-size: 0.75rem !important; 
+                line-height: 1.3 !important;
+            }
         }
         
         /* Search Results UI (LIGHT MODE COLORS) */
